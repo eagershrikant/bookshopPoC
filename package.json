@@ -1,0 +1,36 @@
+{
+  "name": "bookshop",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/audit-logging": "^3.1.0",
+    "@sap/cds": "^3",
+    "@sap/xsenv": "^3.0.0",
+    "@sap/xssec": "^2.2.5",
+    "express": "^4",
+    "hdb": "^0.18.0",
+    "passport": "^0.4.1"
+  },
+  "scripts": {
+    "start": "npx cds run"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "[production]": {
+          "kind": "hana",
+          "model": [
+            "db",
+            "srv"
+          ]
+        }
+      },
+      "uaa": {
+        "kind": "xsuaa"
+      }
+    }
+  }
+}
